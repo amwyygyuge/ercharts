@@ -44,7 +44,7 @@ const col=[ "date"，{ name:"sold",step:true },"pay"  ]
 | toolbox | 工具类 | string\(string/object\) | 支持的工具类:dataZoom/dataViwer/magicType/restore/saveAsImage/brush |
 | brush | 刷子工具 | array\(string\) | 刷子类型:rect/polygon/lineX/lineY/keep/clear |
 | clolor | 配色 | array\(string\) | 默认为echarts配色 |
-| backgroundColor | 背景颜色 | string |  |
+| backgroundColor | 背景颜色 | string | 默认为透明 |
 
 ### 扩展配置
 
