@@ -9,7 +9,7 @@
 | 配置项 | 简介 | 类型 | 备注 |
 | :--- | :--- | :--- | :--- |
 | data | 图表的数据来源 | array\[object\] | 其中一项作为X轴，其他项目作为数据源 |
-| col | 图表与数据的映射关系 | array\[string\|object\] | 默认第一项用来作为X轴，其余会作为数据映射到图表上。假如作为对象，会直接作为该数据的配置项。 |
+| col | 图表与数据的映射关系 | array\[string/object\] | 默认第一项用来作为X轴，其余会作为数据映射到图表上。假如作为对象，会直接作为该数据的配置项。 |
 
 这边给出一组简单的数据配置案例
 
@@ -41,7 +41,7 @@ const col=[ "date"，{ name:"sold",step:true },"pay"  ]
 | yAxis | Y轴配置 |  | 默认生成 |
 | dataZoom | 缩放功能 | string | 三种模式:inside/slider/both |
 | tooltip | 数据提示工具 | string | 两种模式:shadow/cross |
-| toolbox | 工具类 | string\(string\|object\) | 支持的工具类: |
+| toolbox | 工具类 | string\(string/object\) | 支持的工具类:dataZoom/dataViwer/magicType/restore/saveAsImage/brush |
 | brush | 刷子工具 | array\(string\) | 刷子类型:rect/polygon/lineX/lineY/keep/clear |
 | clolor | 配色 | array\(string\) | 默认为echarts配色 |
 | backgroundColor | 背景颜色 | string |  |
