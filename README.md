@@ -1,4 +1,70 @@
-# My Awesome Book
+# 简介
 
-This file file serves as your book's preface, a great place to describe your book's content and ideasdd.
+---
+
+因为echarts复杂的配置和繁多的api，出于简化和组件化原因，用react再做了一层封装，只对外部提供简单的配置接口。主要思想在于用最简单的配置完成所需要的图表，减少使用者了解echarts各个配置项的成本，替使用者做出最好的决定。
+
+## 目前支持的图表类型
+
+1. 柱状图
+2. 折线图
+3. 饼图/环图
+4. 点图
+5. 地理图（中国/世界）
+
+## 简单
+
+开发过程中不断从每个配置中提取最关键的配置项目，直接帮使用者加入些必要的配置，提取功能点作为开关让使用者直接调用
+
+例如 legend ，原本的配置里面有10几项配置项目。其中最关键的配置为data，在使用者提供数据的同时就会自己生成对应的legend，当然也有提供使用与否的开关。
+
+最简单的配置示例
+
+```jsx
+                <Bar
+                    data={this.state.data}
+                    width={800}
+                    height={1000}
+                    col={this.state.col}
+                >
+                </Bar>
+```
+
+## 易扩展
+
+遇到更高级配置无法满足使用者需求的时候，可以直接传入对象进行配置。组件内部有一套处理机制，会识别出什么时候应该直接引用使用者的配置，什么时候应该踢使用者处理配置。
+
+例如 xAxis 在默认状态下是会自行根据数据生成，假如需要自己做配置，可以像这样传入对象
+
+```jsx
+                <Bar
+                    data={this.state.data}
+                    col={this.state.col}
+                    width={800}
+                    height={1000}
+                    xAxis={{
+                        show:false
+                    }}
+                >
+                </Bar>
+```
+
+## 补全配置
+
+目前支持的图表类型不完全，部分api没有完全吸收进来，部分配置没有开放配置接口。暂时提供了一个补充配置的接口供大家使用，这个接口会把你想要补充的配置合并到当前配置上。
+
+```jsx
+                <Bar
+                    data={this.state.data}
+                    col={this.state.col}
+                    width={800}
+                    height={1000}
+                    setting={{
+                        backgroundColor:'#000'
+                    }}
+                >
+                </Bar>
+```
+
+
 
